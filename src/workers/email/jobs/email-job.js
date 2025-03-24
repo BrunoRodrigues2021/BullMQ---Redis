@@ -1,4 +1,4 @@
-const EmailTransporter = require('../config/email-transporter');
+const EmailTransporter = require('../transporters/email-transporter');
 
 class EmailJob {
 

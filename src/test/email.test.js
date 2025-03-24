@@ -3,7 +3,7 @@ const {Worker} = require('bullmq');
 const app = require('../app');
 const RedisConfig = require('../config/redis-config');
 
-const emailWorker = new Worker('emailQueue', require('../jobs/email-job').sendEmail, {
+const emailWorker = new Worker('emailQueue', require('../workers/email/jobs/email-job').sendEmail, {
     connection: RedisConfig.connection
 });
 

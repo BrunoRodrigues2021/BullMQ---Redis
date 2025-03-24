@@ -1,4 +1,4 @@
-const EmailQueue = require('../config/email-queue');
+const EmailQueue = require('../queues/email-queue');
 
 class EmailController {
 

@@ -1,5 +1,5 @@
 const {Queue} = require('bullmq');
-const RedisConfig = require('./redis-config');
+const RedisConfig = require('../config/redis-config');
 
 class EmailQueue {
 
@@ -16,7 +16,7 @@ class EmailQueue {
             for (const emailData of emails) {
                 console.log('Adding email to queue:', emailData);
 
-                await this.queue.add('sendEmail', emailData, {
+                await this.queue.add('emailTopic', emailData, {
                     attempts: 3,
                     backoff: 5000,
                 });

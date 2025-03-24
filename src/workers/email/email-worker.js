@@ -1,6 +1,6 @@
 const {Worker} = require('bullmq');
-const RedisConfig = require('./redis-config');
-const EmailJob = require('../jobs/email-job');
+const RedisConfig = require('../../config/redis-config');
+const EmailJob = require('./jobs/email-job');
 
 class EmailWorker {
 
