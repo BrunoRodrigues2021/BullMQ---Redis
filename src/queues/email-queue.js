@@ -18,7 +18,11 @@ class EmailQueue {
 
                 await this.queue.add('emailTopic', emailData, {
                     attempts: 3,
-                    backoff: 5000,
+                    lockDuration: 30000,
+                    backoff: {
+                        type: 'exponential',
+                        delay: 1000
+                    }
                 });
             }
         } else {
